@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "DrawView.h"
 
-@interface ViewController ()
+@interface ViewController()
+
+@property (nonatomic, strong) IBOutlet DrawView *drawView;
 
 @end
 
@@ -16,7 +19,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    self.drawView.path = [UIBezierPath bezierPathWithRect:CGRectZero];
+    self.drawView.path.lineWidth = 2.0;
+    
+    UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self.drawView action:@selector(didDraw:)];
+    [self.drawView addGestureRecognizer:panRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {

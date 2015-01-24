@@ -14,6 +14,7 @@
 		88DB8AAC1A73168400BBA941 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88DB8AAB1A73168400BBA941 /* Images.xcassets */; };
 		88DB8AAF1A73168400BBA941 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88DB8AAD1A73168400BBA941 /* LaunchScreen.xib */; };
 		88DB8ABB1A73168400BBA941 /* FingerPaintAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DB8ABA1A73168400BBA941 /* FingerPaintAppTests.m */; };
+		88DB8ACB1A73346300BBA941 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DB8ACA1A73346300BBA941 /* DrawView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		88DB8AB41A73168400BBA941 /* FingerPaintAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FingerPaintAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DB8AB91A73168400BBA941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88DB8ABA1A73168400BBA941 /* FingerPaintAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FingerPaintAppTests.m; sourceTree = "<group>"; };
+		88DB8AC91A73346300BBA941 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
+		88DB8ACA1A73346300BBA941 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +84,10 @@
 		88DB8A9D1A73168400BBA941 /* FingerPaintApp */ = {
 			isa = PBXGroup;
 			children = (
-				88DB8AA21A73168400BBA941 /* AppDelegate.h */,
-				88DB8AA31A73168400BBA941 /* AppDelegate.m */,
-				88DB8AA51A73168400BBA941 /* ViewController.h */,
-				88DB8AA61A73168400BBA941 /* ViewController.m */,
-				88DB8AA81A73168400BBA941 /* Main.storyboard */,
+				88DB8ACC1A73346800BBA941 /* View */,
+				88DB8AC41A73174200BBA941 /* ViewController */,
 				88DB8AAB1A73168400BBA941 /* Images.xcassets */,
+				88DB8AA81A73168400BBA941 /* Main.storyboard */,
 				88DB8AAD1A73168400BBA941 /* LaunchScreen.xib */,
 				88DB8A9E1A73168400BBA941 /* Supporting Files */,
 			);
@@ -96,6 +97,8 @@
 		88DB8A9E1A73168400BBA941 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				88DB8AA21A73168400BBA941 /* AppDelegate.h */,
+				88DB8AA31A73168400BBA941 /* AppDelegate.m */,
 				88DB8A9F1A73168400BBA941 /* Info.plist */,
 				88DB8AA01A73168400BBA941 /* main.m */,
 			);
@@ -117,6 +120,24 @@
 				88DB8AB91A73168400BBA941 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		88DB8AC41A73174200BBA941 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				88DB8AA51A73168400BBA941 /* ViewController.h */,
+				88DB8AA61A73168400BBA941 /* ViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		88DB8ACC1A73346800BBA941 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88DB8AC91A73346300BBA941 /* DrawView.h */,
+				88DB8ACA1A73346300BBA941 /* DrawView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +242,7 @@
 			files = (
 				88DB8AA71A73168400BBA941 /* ViewController.m in Sources */,
 				88DB8AA41A73168400BBA941 /* AppDelegate.m in Sources */,
+				88DB8ACB1A73346300BBA941 /* DrawView.m in Sources */,
 				88DB8AA11A73168400BBA941 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
