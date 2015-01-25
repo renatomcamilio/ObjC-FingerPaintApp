@@ -12,16 +12,15 @@
 @interface DrawView ()
 
 @property (nonatomic, strong) UIColor *strokeColor;
+@property (nonatomic, strong) UIBezierPath *path;
 
 @end
 
 @implementation DrawView
 
 - (void)drawRect:(CGRect)rect {
-    //set the stoke color
     [self.strokeColor setStroke];
     
-    //draw the path
     [self.path stroke];
 }
 
@@ -29,9 +28,8 @@
     UIPanGestureRecognizer *drawGesture = (UIPanGestureRecognizer *)sender;
     CGPoint location = [drawGesture locationInView:self];
     
-    if (drawGesture.state == UIGestureRecognizerStateBegan) {
-        [self.path moveToPoint:location];
-    } else if (drawGesture.state == UIGestureRecognizerStateChanged) {
+    if (drawGesture.state == UIGestureRecognizerStateBegan ||
+        drawGesture.state == UIGestureRecognizerStateChanged) {
         [self.path addLineToPoint:location];
     }
     
@@ -40,14 +38,24 @@
     [self setNeedsDisplay];
 }
 
-- (instancetype)init
-{
-    self = [super init];
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    [self.path moveToPoint:[touch locationInView:self]];
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+
     if (self) {
-        self.path = [UIBezierPath bezierPath];
-        self.strokeColor = [UIColor purpleColor];
+        self.path = [UIBezierPath bezierPathWithRect:CGRectZero];
+        self.path.lineWidth = 3.0;
+        self.path.lineJoinStyle = kCGLineJoinRound;
+        
+        self.strokeColor = [UIColor redColor];
+        
+        UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didDraw:)];
+        [self addGestureRecognizer:panRecognizer];
     }
-    return self;
 }
 
 @end

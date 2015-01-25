@@ -10,7 +10,6 @@
 
 @interface DrawView : UIView
 
-@property (nonatomic, strong) UIBezierPath *path;
 - (void)didDraw:(id)sender;
 
 @end
