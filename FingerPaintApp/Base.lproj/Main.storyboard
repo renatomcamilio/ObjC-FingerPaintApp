@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Drawing View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="DrawingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -19,15 +20,67 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRe-nO-QGi" customClass="DrawView">
                                 <rect key="frame" x="76" y="41" width="448" height="518"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSF-Cs-hEs">
+                                <rect key="frame" x="532" y="41" width="60" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ivn-mx-7l6"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="blue"/>
+                                <connections>
+                                    <action selector="pickBlueColor:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CFM-na-Ct2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lz9-r5-iSe">
+                                <rect key="frame" x="532" y="79" width="60" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="rSL-nG-YKS"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="red"/>
+                                <connections>
+                                    <action selector="pickRedColor:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZSt-rG-XhA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usg-hC-Y0A">
+                                <rect key="frame" x="532" y="117" width="60" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dQp-Yw-eYW"/>
+                                </constraints>
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="yellow"/>
+                                <connections>
+                                    <action selector="pickYellowColor:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hHR-d2-3VO"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Usg-hC-Y0A" firstAttribute="leading" secondItem="NRe-nO-QGi" secondAttribute="trailing" constant="8" id="5fd-yS-VGx"/>
+                            <constraint firstItem="cSF-Cs-hEs" firstAttribute="leading" secondItem="NRe-nO-QGi" secondAttribute="trailing" constant="8" id="CxO-I7-Oxi"/>
+                            <constraint firstAttribute="trailing" secondItem="Usg-hC-Y0A" secondAttribute="trailing" constant="8" id="GvS-Pa-wBK"/>
+                            <constraint firstItem="lz9-r5-iSe" firstAttribute="top" secondItem="cSF-Cs-hEs" secondAttribute="bottom" constant="8" id="H3O-NG-zJ7"/>
+                            <constraint firstAttribute="trailing" secondItem="lz9-r5-iSe" secondAttribute="trailing" constant="8" id="JWd-Cb-7Wo"/>
+                            <constraint firstItem="Usg-hC-Y0A" firstAttribute="top" secondItem="lz9-r5-iSe" secondAttribute="bottom" constant="8" id="OMU-is-JyX"/>
+                            <constraint firstAttribute="trailing" secondItem="cSF-Cs-hEs" secondAttribute="trailing" constant="8" id="RZg-OH-Qxf"/>
                             <constraint firstAttribute="width" secondItem="NRe-nO-QGi" secondAttribute="width" multiplier="300:259" constant="81" id="ZfP-rl-XsZ"/>
+                            <constraint firstItem="cSF-Cs-hEs" firstAttribute="top" secondItem="NRe-nO-QGi" secondAttribute="top" id="cMA-2k-1Wy"/>
                             <constraint firstAttribute="centerX" secondItem="NRe-nO-QGi" secondAttribute="centerX" id="jOZ-dw-W2D"/>
+                            <constraint firstItem="lz9-r5-iSe" firstAttribute="top" secondItem="cSF-Cs-hEs" secondAttribute="bottom" constant="8" id="jod-Z9-5Zc"/>
                             <constraint firstAttribute="height" secondItem="NRe-nO-QGi" secondAttribute="height" multiplier="300:259" id="k3I-7q-qbm"/>
+                            <constraint firstItem="lz9-r5-iSe" firstAttribute="leading" secondItem="NRe-nO-QGi" secondAttribute="trailing" constant="8" id="keN-eq-giD"/>
                             <constraint firstAttribute="centerY" secondItem="NRe-nO-QGi" secondAttribute="centerY" id="uEa-Rw-81d"/>
+                            <constraint firstItem="Usg-hC-Y0A" firstAttribute="top" secondItem="lz9-r5-iSe" secondAttribute="bottom" constant="8" id="wvo-Xp-md4"/>
                         </constraints>
                     </view>
                     <connections>

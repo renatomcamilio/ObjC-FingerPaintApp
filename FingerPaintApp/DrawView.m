@@ -11,51 +11,34 @@
 
 @interface DrawView ()
 
-@property (nonatomic, strong) UIColor *strokeColor;
-@property (nonatomic, strong) UIBezierPath *path;
 
 @end
 
 @implementation DrawView
 
-- (void)drawRect:(CGRect)rect {
-    [self.strokeColor setStroke];
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
     
-    [self.path stroke];
-}
-
-- (void)didDraw:(id)sender {
-    UIPanGestureRecognizer *drawGesture = (UIPanGestureRecognizer *)sender;
-    CGPoint location = [drawGesture locationInView:self];
-    
-    if (drawGesture.state == UIGestureRecognizerStateBegan ||
-        drawGesture.state == UIGestureRecognizerStateChanged) {
-        [self.path addLineToPoint:location];
-    }
-    
-    self.strokeColor = (location.y > self.bounds.size.height / 2) ? [UIColor purpleColor] : [UIColor redColor];
-
-    [self setNeedsDisplay];
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
-    [self.path moveToPoint:[touch locationInView:self]];
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-
     if (self) {
-        self.path = [UIBezierPath bezierPathWithRect:CGRectZero];
-        self.path.lineWidth = 3.0;
-        self.path.lineJoinStyle = kCGLineJoinRound;
+        self.paths = [[NSMutableArray alloc] init];
+        self.strokeColors = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
+- (void)drawRect:(CGRect)rect {
+    for (int index = 0; index < self.paths.count; index++) {
+        UIBezierPath *path = [self.paths objectAtIndex:index];
+        UIColor *strokeColor = [self.strokeColors objectAtIndex:index];
         
-        self.strokeColor = [UIColor redColor];
+        path.lineWidth = 3.0;
+        path.lineJoinStyle = kCGLineJoinRound;
         
-        UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didDraw:)];
-        [self addGestureRecognizer:panRecognizer];
+        [strokeColor setStroke];
+        [path stroke];
     }
 }
+
 
 @end

@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8819C9991BE4258E00EA7778 /* ColorPaletteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8819C9981BE4258E00EA7778 /* ColorPaletteView.xib */; };
+		8819C99C1BE425A300EA7778 /* ColorPaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8819C99B1BE425A300EA7778 /* ColorPaletteView.m */; };
 		88DB8AA11A73168400BBA941 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DB8AA01A73168400BBA941 /* main.m */; };
 		88DB8AA41A73168400BBA941 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DB8AA31A73168400BBA941 /* AppDelegate.m */; };
-		88DB8AA71A73168400BBA941 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DB8AA61A73168400BBA941 /* ViewController.m */; };
+		88DB8AA71A73168400BBA941 /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DB8AA61A73168400BBA941 /* DrawingViewController.m */; };
 		88DB8AAA1A73168400BBA941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DB8AA81A73168400BBA941 /* Main.storyboard */; };
 		88DB8AAC1A73168400BBA941 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88DB8AAB1A73168400BBA941 /* Images.xcassets */; };
 		88DB8AAF1A73168400BBA941 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88DB8AAD1A73168400BBA941 /* LaunchScreen.xib */; };
@@ -28,13 +30,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8819C9981BE4258E00EA7778 /* ColorPaletteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPaletteView.xib; sourceTree = "<group>"; };
+		8819C99A1BE425A300EA7778 /* ColorPaletteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPaletteView.h; sourceTree = "<group>"; };
+		8819C99B1BE425A300EA7778 /* ColorPaletteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPaletteView.m; sourceTree = "<group>"; };
 		88DB8A9B1A73168400BBA941 /* FingerPaintApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FingerPaintApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DB8A9F1A73168400BBA941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88DB8AA01A73168400BBA941 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		88DB8AA21A73168400BBA941 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		88DB8AA31A73168400BBA941 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		88DB8AA51A73168400BBA941 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		88DB8AA61A73168400BBA941 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		88DB8AA51A73168400BBA941 /* DrawingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawingViewController.h; sourceTree = "<group>"; };
+		88DB8AA61A73168400BBA941 /* DrawingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingViewController.m; sourceTree = "<group>"; };
 		88DB8AA91A73168400BBA941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88DB8AAB1A73168400BBA941 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		88DB8AAE1A73168400BBA941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -125,8 +130,8 @@
 		88DB8AC41A73174200BBA941 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				88DB8AA51A73168400BBA941 /* ViewController.h */,
-				88DB8AA61A73168400BBA941 /* ViewController.m */,
+				88DB8AA51A73168400BBA941 /* DrawingViewController.h */,
+				88DB8AA61A73168400BBA941 /* DrawingViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -136,6 +141,9 @@
 			children = (
 				88DB8AC91A73346300BBA941 /* DrawView.h */,
 				88DB8ACA1A73346300BBA941 /* DrawView.m */,
+				8819C9981BE4258E00EA7778 /* ColorPaletteView.xib */,
+				8819C99A1BE425A300EA7778 /* ColorPaletteView.h */,
+				8819C99B1BE425A300EA7778 /* ColorPaletteView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -222,6 +230,7 @@
 			files = (
 				88DB8AAA1A73168400BBA941 /* Main.storyboard in Resources */,
 				88DB8AAF1A73168400BBA941 /* LaunchScreen.xib in Resources */,
+				8819C9991BE4258E00EA7778 /* ColorPaletteView.xib in Resources */,
 				88DB8AAC1A73168400BBA941 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,10 +249,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88DB8AA71A73168400BBA941 /* ViewController.m in Sources */,
+				88DB8AA71A73168400BBA941 /* DrawingViewController.m in Sources */,
 				88DB8AA41A73168400BBA941 /* AppDelegate.m in Sources */,
 				88DB8ACB1A73346300BBA941 /* DrawView.m in Sources */,
 				88DB8AA11A73168400BBA941 /* main.m in Sources */,
+				8819C99C1BE425A300EA7778 /* ColorPaletteView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +444,7 @@
 				88DB8AC01A73168400BBA941 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		88DB8AC11A73168400BBA941 /* Build configuration list for PBXNativeTarget "FingerPaintAppTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +453,7 @@
 				88DB8AC31A73168400BBA941 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

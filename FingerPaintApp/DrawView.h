@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface DrawView : UIView
 
-- (void)didDraw:(id)sender;
+@property (nonatomic, strong) NSMutableArray *paths;
+@property (nonatomic, strong) NSMutableArray *strokeColors;
 
 @end
